@@ -27,7 +27,10 @@ const createAndSavePerson = (done) => {
     favouriteFoods:['Postachios','Omelette']
   });
   
-  person.save()
+  person.save(function(err, data){
+    if (err) return;
+    return console.log(data);
+  })
   done(null /*, data*/);
 };
 
