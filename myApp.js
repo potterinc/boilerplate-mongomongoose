@@ -30,8 +30,8 @@ const createAndSavePerson = (done) => {
   person.save(function(err, data){
     if (err) return;
     res.send(data)
-    done(data);
-  });
+  })
+  done(data /*, data*/);
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
