@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch(()=> console.log(mongoose.Error('failed to connect')));
 
 // Person model
-const personSchema = new mongoose.Schema({
+const personSchema = mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -18,8 +18,7 @@ const personSchema = new mongoose.Schema({
   favoriteFoods: [String]
 },{timestamps: true, versionKey: false});
 
-let Person;
-Person = mongoose.model('Person', personSchema);
+const Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = (done) => {
   let person = new Person({
