@@ -78,7 +78,6 @@ const queryChain = (done) => {
   done(null /*, data*/);
 };
 
-createAndSavePerson();
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
  */
