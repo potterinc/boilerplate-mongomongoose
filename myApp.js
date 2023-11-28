@@ -28,7 +28,6 @@ const createAndSavePerson = (done) => {
   });
 
   person.save(function (err, data) {
-    if (err) return;
     console.log(data)
   })
   done(null /*, data*/);
