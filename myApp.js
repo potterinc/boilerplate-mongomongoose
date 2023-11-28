@@ -27,11 +27,7 @@ const createAndSavePerson = async (done) => {
     favouriteFoods: ['Postachios', 'Omelette']
   });
 
-  await person.save(function(err, data){
-    if (err) console.error(done(null, err));
-    console.log(data)
-  });
-  done("Saved");
+  await person.save(done(null, data))
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
