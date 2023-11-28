@@ -29,6 +29,7 @@ const createAndSavePerson = async (done) => {
 
   await person.save(function(err, data){
     if (err) console.error(done(null, err));
+    console.log(data)
   });
   done("Saved");
 };
