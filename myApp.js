@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
-});
+}).then(()=>console.log(mongoose.connection.host[0]))
+.catch(()=> console.log(mongoose.Error('failed to connect')));
 
 // Person model
 const personSchema = new mongoose.Schema({
