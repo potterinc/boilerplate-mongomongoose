@@ -8,14 +8,14 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 // Person model
-const personSchema = mongoose.Schema({
+const personSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
   },
   age: { type: Number },
   favoriteFoods: [String]
-});
+},{timestamps: true, versionKey: false});
 
 let Person;
 Person = mongoose.model('Person', personSchema);
