@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then(()=>console.log(mongoose.connection.host[0]))
+}).then(()=>console.log('connected'))
 .catch(()=> console.log(mongoose.Error('failed to connect')));
 
 // Person model
@@ -14,7 +14,7 @@ const personSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  age: { type: Number },
+  age: Number,
   favoriteFoods: [String]
 },{timestamps: true, versionKey: false});
 
@@ -30,7 +30,7 @@ const createAndSavePerson = (done) => {
   person.save(function (err, data) {
       if (err) return console.error(err);
       done(null, data)
-    })
+    });
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
