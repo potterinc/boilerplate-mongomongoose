@@ -8,13 +8,13 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 // Person model
-const personSchema = new mongoose.Schema({
+const personSchema = mongoose.Schema({
   name:{
     type: String,
     required: true
   },
   age: {type:Number},
-  favouriteFoods: [{type:String}]
+  favoriteFoods: [String]
 });
 
 let Person;
