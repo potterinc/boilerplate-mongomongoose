@@ -27,8 +27,7 @@ const createAndSavePerson = async (done) => {
     favouriteFoods: ['Postachios', 'Omelette']
   });
 
-  const data = await person.save()
-  res.send = data;
+  const data = await person.save();
 
     done(null, data)
 };
@@ -77,6 +76,7 @@ const queryChain = (done) => {
   done(null /*, data*/);
 };
 
+createAndSavePerson();
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
  */
