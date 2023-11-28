@@ -9,11 +9,11 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Person model
 const personSchema = mongoose.Schema({
-  name:{
+  name: {
     type: String,
     required: true
   },
-  age: {type:Number},
+  age: { type: Number },
   favoriteFoods: [String]
 });
 
@@ -24,14 +24,14 @@ const createAndSavePerson = (done) => {
   let person = new Person({
     name: 'Alan',
     age: 38,
-    favouriteFoods:['Postachios','Omelette']
+    favouriteFoods: ['Postachios', 'Omelette']
   });
-  
-  person.save(function(err, data){
+
+  person.save(function (err, data) {
     if (err) return;
-    res.send(data)
+    console.log(data)
   })
-  done('Data saved' /*, data*/);
+  done(null /*, data*/);
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
