@@ -31,7 +31,7 @@ const createAndSavePerson = (done) => {
     if (err) return;
     res.send(data)
   })
-  done(data /*, data*/);
+  done('Data saved' /*, data*/);
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
