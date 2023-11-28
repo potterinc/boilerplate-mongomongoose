@@ -28,7 +28,8 @@ const createAndSavePerson = async (done) => {
   });
 
   await person.save(function(err, data){
-    return done(data);
+    if (err) console.error(done(null, err));
+    console.log(done(null, data));
   });
 
 };
